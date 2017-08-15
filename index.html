@@ -4,177 +4,383 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>JCES - Historia y filosofía de la ciencia</title>
+		<title>JCES - Admin</title>
+        <link rel="stylesheet" href="../jcunisabana.github.io/css/bootstrap.min.css">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/night.css">
-        		<link rel="stylesheet" href="../jcunisabana.github.io/css/bootstrap.min.css">
 
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css" >
 						<link rel="stylesheet" href="css/estilo.css">
 
-		<!-- To use icons from fontawesome -->
-
-		<script src="https://use.fontawesome.com/503e7c40b4.js"></script>
 
 		<!-- Printing and PDF exports -->
-		<script>
+<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-        
-        <!--funcion para hacer cuentra regresivas' -->
-         <script>
-                function cuentaregresiva(countDownDate,nameId) {
-                var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
-                var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var semanas = Math.floor(distance / (1000 * 60 * 60 * 24 * 7 ));
-                var days = Math.floor(((distance % (1000 * 60 * 60 * 24 * 7))/ (1000 * 60 * 60 * 24)));
-    
-                // Output the result in an element with id="primerafecha"
-
-                if ((days == -1) && (semanas == -1))  {
-                    document.getElementById(nameId).innerHTML += " (Hoy)";
-                    document.getElementById(nameId).style.color="YELLOWGREEN"
-                }
-                else if ((days == 0) && (semanas == 0))  {
-                    document.getElementById(nameId).innerHTML += " (Mañana)";
-                    document.getElementById(nameId).style.color="DARKKHAKI"
-                }
-                else if (distance < 0) {
-                    document.getElementById(nameId).innerHTML += " (Finalizado)";
-                    document.getElementById(nameId).style.color="#7B241C"
-                } else {
-                    document.getElementById(nameId).innerHTML += " (" + semanas + " semanas y "   + (days + 1) + " días)";
-                    }   
-                return  0;          
-            }    
-        </script>
 	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-                
-<section data-background-image ="https://upload.wikimedia.org/wikipedia/commons/3/32/Flammarion-3.jpg">
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<section  data-background-color="white" data-background-image ="https://upload.wikimedia.org/wikipedia/commons/9/9e/Autumn_Red_peaches.jpg" data-background-size = "">
+
     
-<div class="container-fluid">
-			
+<div class="container">
 <div class="row">
-    <h2 class="highlightred">Historia y filosofía de la ciencia</h2>
 
-    <div class="col-md-6" style="background-color:black;">
-
-    <table  class="semanario">
-        <tr>
-        <td class="tg-031e" colspan="4"><h4>Presentaciones</h4>
-    </td>
-      </tr>
-      <tr>
-         <td class="tg-031e" style="padding:20px 10px;"><a href="1.html">S 1</a></td>
-        <td class="tg-031e" style="padding:20px 10px;"><a href="2.html">S 2</a></td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="3.html">S 3</a></td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="4.html">S 4</a></td>
-      </tr>
-      <tr>
-        <td class="tg-031e" style="padding:20px 10px;"><a href="5.html">S 5</a></td>
-        <td class="tg-031e"><a href="6.html" style="padding:20px 10px;">S 6</a> </td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="7.html">S 7</a> </td>
-        <td class="tg-yw4l"><a href="8.html" style="padding:20px 10px;">S 8</a> </td>
-      </tr>
-      <tr>
-        <td class="tg-031e"><a href="9.html" style="padding:20px 10px;">S 9</a> </td>
-        <td class="tg-031e"><a href="10.html" style="padding:20px 10px;">S 10</a> </td>
-        <td class="tg-031e" style="padding:20px 10px;" >
-        <a href="11.html">S 11</a> 
-        </td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="12.html">S 12</a> </td>
-      </tr>
-      <tr>
-        <td class="tg-031e" style="padding:20px 10px;"><a href="13.html">S 13</a> </td>
-        <td class="tg-031e" style="padding:20px 10px;"><a href="14.html">S 14</a> </td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="15.html">S 15</a> </td>
-        <td class="tg-yw4l" style="padding:20px 10px;"><a href="16.html">S 16</a> </td>
-      </tr>
-          <tr>
-
-          </tr>
-
-    </table>
-        
-    </div>	
-    <div class="col-md-6" style="background-color:black;">
-        <h4 >Anuncios y recordatorios</h4>
-    
-        <font size="2">
-          
-            <h3 id="primafecha" style="background-color:DIMGRAY;">Primera clase del semestre</h3>
-            <script>
-            cuentaregresiva(new Date("Jul 27, 2017").getTime(),"primafecha");
-            </script>
-
-
-        </font>
-        
-    
-    </div>	
-
-<div class="col-md-12 ">	
-    <div><br>			    	</div>	    
-
-<h4 class="highlightred">Enlaces importantes</h4>
-<font size="3">	
-    <div class="col-md-4 highlightred"><a href="http://virtual.unisabana.edu.co/course/view.php?id=12167&section=0">Virtual Sabana</a>
-	</div>
-	<div class="col-md-4 highlightred" ><a href="https://unisabanaedu-my.sharepoint.com/personal/juanesse_unisabana_edu_co/Documents/Class Notebooks/Historia y filosofía de la ciencia">Cuaderno OneNote</a></div>
-	<div class="col-md-4 highlightred"><a href="https://unisabanaedu-my.sharepoint.com/personal/juanesse_unisabana_edu_co/_layouts/15/guestaccess.aspx?guestaccesstoken=6d34EjbVQzFy1STvEcvNyf3doLLSaZRNxzqCz342Otw%3d&folderid=2_1c1ba5ed06fb4424a8f1396e9be0c02d1&rev=1">Carpeta virtual</a></div>
-
-</font>	
-
-	<font size="2"><p class="col-md-12 highlightred">Juan Camilo Espejo-Serna<br> Universidad de la Sabana</p></font> 
+<div class=" col-lg-10"> 
+    <h1><br><br></h1>
+<h3 class="highlightred" style="text-align:left; color:white"  >Lógica 1 &amp; <br> Lectura y escritura de textos filosóficos</h3> 
+	       
 </div>	
+<div class="col-lg-3" > 
 
+<font size="3"><p class="highlightred" tyle="text-align:left;" >Juan Camilo Espejo-Serna<br> Universidad de la Sabana</p></font> 
 		
-</div>
 
 </div>	
-                
-</section>	
+</div>	
+
+</div>
+</section>
+
+    
+
+<section><h2>Orden del día</h2>
+	<ul>
+    
+        <h3><li class="fragment fade-up" data-fragment-index="1">Lógica 1</li></h3>
+     <ol class="fragment" data-fragment-index="3">
         
+<li class=" fade-up" data-fragment-index="2"><a href="#/uno">Descripción</a></li>
+<li class=" fade-up"><a href="#/dos">Objetivos </a></li>
+<li class=" fade-up"><a href="#/tres">Contenidos</a></li>
+         <li class=" fade-up"><a href="#/tres">Evaluación </a></li></ol>
+        <h3><li class="fragment fade-up" data-fragment-index="2">Lectura y escritura de textos filosóficos</li></h3>
+        <ol class="fragment" data-fragment-index="3">
+        
+        <li class=" fade-up"><a href="#/uno">Descripción</a></li>
+<li class=" fade-up"><a href="#/dos">Objetivos </a></li>
+<li class=" fade-up"><a href="#/tres">Contenidos</a></li>
+         <li class=" fade-up"><a href="#/tres">Evaluación </a></li>
+        </ol>
+        
+        
+	</ul>
+
+</section>    
+  
 
 
 
+<section  data-background-color="white" data-background-image ="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/7-simplex_t2.svg/3200px-7-simplex_t2.svg.png" data-background-size = "">
 
+<h2 class="highlightred">Lógica 1</h2>
+    
+    
+</section>
 
+<section data-background-color="">
+    <h3 class="leftblack">Descripción</h3>     <p class="lefstblack" style="text-align:left">El objetivo central de este curso es desarrollar las capacidades de comprender, analizar, evaluar y construir argumentos formulados en el lenguaje ordinario y lenguajes formales. Con este fin, examinaremos y evaluaremos los alcances y las limitaciones de diversos intentos de sistematizar y formalizar prácticas argumentativas ordinarias y de desarrollar procedimientos para distinguir argumentos correctos de incorrectos.</p></section>
+
+<section data-background-color="">
+    <h3 class="leftblack">Objetivos</h3>     <ol>
+<li><p>Comprender caracterizaciones generales de la lógica y su finalidad.</p></li>
+<li><p>Saber usar y explicar los conceptos básicos de la lógica.</p></li>
+<li><p>Entender aspectos cruciales significativos de la argumentación griega en detalle y con ejemplos.</p></li>
+<li><p>Conocer e identificar diferentes tipos de falacias argumentativas en la práctica.</p></li>
+<li><p>Construir tablas de verdad para expresiones formales complejas.</p></li>
+<li><p>Realizar demostraciones formales de acuerdo con las reglas de la lógica proposicional.</p></li>
+<li><p>Utilizar tecnologías de información y comunicación para apoyar su aprendizaje</p></li>
+</ol></section>
+
+   
+<section data-background-color="white">
+    <div class="container-fluid">
+        	<h3 class="leftblack">Contenido temático</h3>
+
+	<div class="row">
+	<div class="col-sm-4" style="background-color:CornflowerBlue ;"> <h3>Módulo 1</h3> <h4>¿Qué es la lógica?<br><br> </h4>
+		
+		</div>	
+		<div class="col-sm-4" style="background-color:indigo;"> <h3>Módulo 2 </h3> <h4>Argumentación en la Grecia antigua</h4>
+		</div>	
+		<div class="col-sm-4" style="background-color:LightSeaGreen;"> <h3>Módulo 3 </h3> <h4>Lógica formal<br> <br> </h4> 
+		</div>	
+	<a href="../ontologiadelomental/"></a>
+	</div>
+
+	</div>
+
+	</section>
+                
+<section data-background-color="CornflowerBlue"> 
+<h3>Módulo 1:<br>¿Qué es la lógica?</h3>   
+
+<p class="fragment fade-up">Diferencia entre lógica del ser, lógica del pensamiento y lógica del lenguaje. Acertijos y cambios en la forma de representar. <br>Lógica formal vs. Lógica informal. </p> 
+    
+</section>
+                
+<section data-background-color="indigo"> 
+<h3>Módulo 2:<br>Argumentación en la Grecia antigua</h3>   
+    
+<p class="fragment fade-up">Argumentos de Zenón de Elea en contra del movimiento: ejercicios de formalización y estructuración de un argumento.<br>Geometría euclidiana: ejemplo de un sistema axiomático. <br>Silogística aristotélica y diagramas de Venn.</p> 
+</section>
+    
+<section data-background-color="LightSeaGreen"> 
+<h3>Módulo 3:<br>Lógica proposicional</h3>   
+    
+<p class="fragment fade-up">La noción de un sistema formal y el sistema formal de la lógica proposicional. Las tablas de verdad de los conectivos básicos. Reglas de los conectivos. Demostraciones formales.
+</p> 
+</section>
+    
+<section data-background-color="">
+    <h3 class="leftblack">Evaluación</h3>   </section>
+    
+<section data-background-color="CornflowerBlue"> 
+<h3>Módulo 1:<br>¿Qué es la lógica?</h3>   
+
+    <p class="">
+    Taller: Glosario de conceptos básicos de la lógica (10%)<br />
+    Taller: Falacias en la película ‘12 Angry Men’ (10%)<br /> 
+       Taller:  Reconstrucción de argumentos (10%)
+    </p>
+
+</section>   
+    
+           
+<section data-background-color="indigo"> 
+<h3>Módulo 2:<br>Argumentación en la Grecia antigua</h3>   
+    
+<p class=" fade-up">
+Taller: Diagramas de Venn (10%)<br />
+Taller: Silogística aristotélica (10%)<br />
+Taller: Tablas de verdad (10%)<br /></section>
+    
+<section data-background-color="LightSeaGreen"> 
+<h3>Módulo 3:<br>Lógica proposicional</h3>   
+    
+<p class=" fade-up">
+    Taller: Fórmulas equivalentes (10%)<br />
+ Taller: Demostraciones formales (10%)<br />
+ Examen: Lógica proposicional (20%)<br />
+</p> 
+</section>    
+    
+    
+    
+
+<section data-background-image ="https://upload.wikimedia.org/wikipedia/commons/1/1c/Book_sale_loot_%284552277923%29.jpg">
+	
+<div class="container">
+<div class="row">
+
+	<div class="highlightred col-sm-10"> 
+	<h2 class=" ">Lectura y escritura <br>de textos filosóficos</h2> 
+	       
+	</div>	
+		
+</div>	
 
 </div>
-</div>
+		
+				</section>   
+    
+    
 
+<section data-background-color="">
+    <h3 class="leftblack">Descripción</h3>     <p>La lectura y escritura de textos filosóficos es la base de la labor filosófica. Este curso es una propedéutica a la escritura y lectura de textos filosóficos. El resto de su carrera en filosofía, puede decirse, consistirá en una profundización y afinamiento de esta herramientas. Para ello, se leerá, discutirá y escribirá sobre tres temas generales: 1) la educación y la lectura, 2) temas particulares en filosofía moral, y 3) temas particulares en filosofía de la mente. Estos temas son una excusa ejercer la lectura y escritura sobre temas filosóficos y nuestro enfoque particular seran las habilidades en lectura y escritura.</p>
+<p>Se espera que el estudiante logre leer de manera cuidadosa un texto filosófico y que sea capaz de producir reseñas, relatorías, protocolos y ensayos sobre temas propios de la filosofía.</p></section>
+
+<section data-background-color="">
+    <h3 class="leftblack">Objetivos (1/2)</h3>     
+<ol>
+<li>Identificar el o los puntos principales de un texto y las razones ofrecidas en su favor.</li>
+<li>Escribir una reseña que dé cuenta de los puntos principales del texto, las razones ofrecidas en su favor y una pequeña evaluación de estos.</li>
+<li>Escribir una relatoría que dé cuenta de los puntos principales del texto, las razones ofrecidas en su favor y presente preguntas para la discusión en clase.</li>
+<li>Escribir un protoloco que dé cuenta de los puntos principales del la discusión en clase, dando cuenta de las tesis presentadas y las razones ofrecidas en su favor.</li>
+<li>Escribir un ensayo que trate un tema filosófico en donde se vea claramente defendida una posición, y se den buenas razones en su favor.</li>
+
+</ol>
+</section>
+    
+
+<section data-background-color="">
+    <h3 class="leftblack">Objetivos (2/2)</h3>     
+<ol>
+
+<li>Usar adecuadamente el vocabulario y registro propio de la escritura académica.</li>
+<li>Emplear la gramática, la puntuación y la ortografía adecuada para construir un texto coherente.</li>
+<li>Saber usar uno de los diferentes estilos de citación reconocidos en la comunidad académica (APA, Chicago, MLA, etc.) de manera consistente.</li>
+</ol>
+</section>    
+    
+
+<section data-background-color="white">
+    <div class="container-fluid">
+        	<h2 class="leftblack">Contenido temático</h2>
+
+	<div class="row">
+	<div class="col-sm-4" style="background-color:CornflowerBlue ;"> <h3>Módulo 1</h3> <h4>Leer &amp; reseñar <br><br> </h4>
+		
+		</div>	
+		<div class="col-sm-4" style="background-color:indigo;"> <h3>Módulo 2 </h3> <h4>Escribir relatorías &amp; protocolos</h4>
+		</div>	
+		<div class="col-sm-4" style="background-color:LightSeaGreen;"> <h3>Módulo 3 </h3> <h4>Escribir un ensayo argumentativo</h4> 
+		</div>	
+	</div>
+
+	</div>
+
+	</section>
+                
+<section data-background-color="CornflowerBlue"> 
+<h3>Módulo 1: Leer y reseñar</h3>   
+    
+<p class="fragment fade-up">El objetivo principal de este módulo será aprender a leer, identificar la o las tesis principales de un texto, las razones ofrecidas en su favor y algunas preguntas que se le pueden hacer al texto</p> 
+</section>
+    
+<section data-background-color="CornflowerBlue"> 
+<h3>¿Qué vamos a leer?</h3> 
+
+<ol>
+<li class="fragment fade-up">¿Qué es la filosofía?<br>(Luis Eduardo Hoyos)</li>  
+<li class="fragment fade-up">La crisis educativa y la importancia de la educación humanística <br>(Martha Nussbaum)</li>  
+<li class="fragment fade-up">Sobre la lectura <br>(Estanislao Zuleta)</li>  
+</ol>
+</section>
+                
+<section data-background-color="indigo"> 
+<h3>Módulo 2: Escribir relatorías &amp; protocolos</h3>   
+    
+<p class="fragment fade-up">El objetivo principal de este módulo será aprender a escribir una relatoría y un protocolo</p> 
+</section>
+    
+<section data-background-color="indigo"> 
+<h3>¿Qué vamos a leer?</h3> 
+<p class="fragment fade-up">Una variedad de textos en filosofía moral</p> 
+<p class="fragment fade-up">El rol de la emociones y la razón en las deliberación práctica, razones para actuar, la pregunta por la necesidad de alternativas para la atribución de responsabilidad moral</p> 
+
+
+</section>
+
+<section data-background-color="LightSeaGreen"> 
+<h3>Módulo 3: Escribir un ensayo argumentativo</h3>   
+    
+<p class="fragment fade-up">El objetivo principal de este módulo será aprender a escribir una ensayo filosófico</p> 
+</section>
+    
+<section data-background-color="LightSeaGreen"> 
+<h3>¿Qué vamos a leer?</h3> 
+<p class="fragment fade-up">Una variedad de textos en filosofía de la mente</p> <p class="fragment fade-up">El dualismo cartesiano y una crítica a éste, las nociones de pensamiento rápido y pensamiento lento, inteligencia artificial </p> 
+
+
+
+</section>      
+    
+ 
+<section data-background-color="">
+    <h3 class="leftblack">Evaluación</h3>   
+    
+
+<table>
+<thead>
+<tr class="header">
+<th align="left"><em>Actividad</em></th>
+<th align="center"><em>Valor porcentual</em></th>
+<th align="center"><em>Corte</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Trabajos semanales</td>
+<td align="center">20%</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">Reseña</td>
+<td align="center">10%</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Relatoría</td>
+<td align="center">10%</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="left">Controles de lectura</td>
+<td align="center">10%</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Protocolo</td>
+<td align="center">10%</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="left">Controles de lectura</td>
+<td align="center">10%</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Protocolo</td>
+<td align="center">10%</td>
+<td align="center">3</td>
+</tr>
+<tr class="even">
+<td align="left">Relatoría</td>
+<td align="center">10%</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Ensayo argumentativo</td>
+<td align="center">10%</td>
+<td align="center">3</td>
+</tr>
+</tbody>
+</table>
+    </section>
+      
+    
+<section id="prox" data-transition="fade-in" data-background="#009933" data-background-transition="zoom">
+<h3>Preguntas, comentarios y sugerencias</h3>
+	
+				</section>
+
+
+
+
+			</div>
+		</div>
 <script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
 
 
-<script>
-// More info https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-history: true,
+		</script>
 
-// More info https://github.com/hakimel/reveal.js#dependencies
-dependencies: [
-{ src: 'plugin/markdown/marked.js' },
-{ src: 'plugin/markdown/markdown.js' },
-{ src: 'plugin/notes/notes.js', async: true },
-{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-]
-});
-</script>
-</body>
+	</body>
 </html>
