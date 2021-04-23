@@ -204,7 +204,10 @@
     <p class="fragment">¿Cómo así que la realidad está sesgada?</p>
     </section>
     
-    <section>Aquí nuestro ejemplo de los gatos deja de tener mucho sentido pues no parece haber razón para pensar en que hay un sesgo en contra o en favor de los gatos en la realidad. Pero justamente los programas en ML van más allá de estos casos de juguete y es ahí en donde se pueden ver los problemas más importantes. </section>
+    <section>Aquí nuestro ejemplo de los gatos deja de tener mucho sentido pues no parece haber razón para pensar en que hay un sesgo en contra o en favor de los gatos en la realidad. Pero justamente los programas en ML van más allá de estos casos de juguete y es ahí en donde se pueden ver los problemas más importantes. 
+    
+    <p class="fragment">Entonces veamos un ejemplo real.</p>
+    </section>
     
     
     <section>La aplicación Face De-Pixelizer tiene como entrada una imagen de una persona en baja resolución y como salida una imagen de alta calidad. De acuerdo con la descripción inicial del proyecto, se trata de una red neuronal entrenada con una base de datos amplia de fotos de personas en la plataforma Flikr que toma imágenes pixeladas y las despixela. </section>
@@ -231,7 +234,7 @@
 </p>
     <p class="fragment">   Alternativamente, se podría decir que el problema está que en la categorización usada se adoptó por etiquetas que no dan la posibilidad de categorizar con base en la edad -borrando efectivamente las diferencias de edades y optando por una edad general de la base de datos. </p>
     <p class="fragment">Por último, bien puede ser que en la sociedad de donde se toman los datos, los rasgos caucásicos son más prevalentes o importantes o más privilegiados en las representaciones pictóricas</p>
-    <p class="fragment">    Dada la multiplicidad de maneras en que se podría entender, ¿cómo entender el problema? No tenemos una respuesta clara todavía. Con este ejemplo podemos ver la variedad de posibles respuestas.
+    <p class="fragment">    Dada la multiplicidad de maneras en que se podría entender, ¿cómo entender el problema? No tenemos una respuesta clara todavía. (Los desarrolladores se salieron por la tangente.)
 </p>
 
     
@@ -263,7 +266,18 @@
 
 
     
+     <section data-background-image ="img/gebru.jpg" data-background-size = "contain" data-background-position="right">
+    <div class="doscuadros ">
+    <p class="highlightred">Timnit Gebru, por ejemplo, estuvo trabajando en Google, desde adentro, procurando maneras específicas de llevar a la compañía a vivir el que era su lema de “Do no evil”, pero justo fue despedida a raíz de que su investigación. Lo que da la impresión de que Google quiere que se cumpla con la letra del lema sin el trabajo duro que implica implementar su espíritu.
+         
+         </p><p class=" fragment highlightred">Parte de lo que gente como Gebru apunta es que necesitamos un cambio en el ambiente de estudio y diseño de la IA; no pañitos de agua tibia.</p></div>
+    </section>
     
+    <section>Hasta aquí el recuento esquemático del problema y de las propuestas de solución.</section>
+    <section>
+    Quiero proponer, a modo de diagnóstico de la situación y de la respuesta propuesta por investigadoras como Gebru, que la razón por la que las medidas adoptadas no funcionan y se requiere una reforma de raíz es que se necesita repensar la relación con la ética en la IA. El problema, quiero sugerir, yace en una concepción particular del razonamiento ético. 
+    
+    </section>
     <section  data-background-color="white" data-background-image ="img/ggm.png" data-background-size = "contain" data-background-position="right">
 
 <div class="container">
@@ -277,6 +291,97 @@
 </div>
 </div>	
 </section> 
+    
+<section>¿Qué tipo de concepción del razonamiento ético?</section> 
+    
+<section  data-background-image ="img/velleman.jpg" data-background-size = "contain" data-background-position="right">
+    <p class="doscuadros highlightred">"Supongamos que se le encarga la tarea de diseñar un agente autónomo, dado el diseño para un mero sujeto de motivación. Si lo desea, puede asignarse imaginativamente a la gerencia media divina como líder del proyecto para la sexta tarde de la creación; o puede que prefiera asumir el papel de la selección natural durante los milenios correspondientes. En cualquier caso, se enfrenta a un mundo ya poblado de animales inferiores, que son capaces de una actividad motivada, y su tarea es introducir agentes autónomos.</p>
+    </section>    
+    
+<section  data-background-image ="img/velleman.jpg" data-background-size = "contain" data-background-position="right">
+    <p class="doscuadros highlightred">Más bien, agregaría una razón práctica al diseño existente para criaturas motivadas, y lo agregaría en forma de un mecanismo que modifica las fuerzas motivacionales que ya están en funcionamiento. Diseñaría una razón práctica que examinara los motivos de la criatura, bloqueara o inhibira algunos de ellos y reforzara otros.</p>
+    </section>    
+    
+    <section  data-background-image ="img/velleman.jpg" data-background-size = "contain" data-background-position="right">
+    <p class="doscuadros highlightred">Una criatura dotada de tal mecanismo reflexionaría sobre las fuerzas dentro de sí que ya eran capaces de producir un comportamiento por sí mismas -como lo hacen en las criaturas no autónomas o en su propio comportamiento no autónomo. Su razonamiento práctico sería un proceso de evaluación de estos resortes de acción y su intervención en sus operaciones, cuya intervención requeriría un resorte de acción racional adicional capaz de modificar o redirigir la fuerza ejercida por los otros resortes. (Velleman 2000, 11-12)"</p>
+    </section>    
+    
+    <section>Velleman nos invita a suponer que estuviésemos encargados de diseñar e implementar un sujeto autónomo. De acuerdo con su historia, la pregunta es cómo pasar de un animal que tiene capacidad de actividad meramente motivada por deseos a un sujeto autónomo que actúa por razones.  Es decir, pasar de un sujeto con comportamiento a un sujeto que actúa por razones</section>
+   
+    <section>La manera de hacerlo, afirma Velleman, sería tomar en mecanismo existente que ya da resultados pero que no está guiado por consideraciones de la razón práctica y añadir un mecanismo evaluador y seleccionador. El razonamiento ético de este tipo de organismos consistiría en la evaluación de su comportamiento pre-ético y la intervención en ese comportamiento según lo que diga la razón práctica.</section>
+    
+    
+    <section>La imagen de Velleman y la forma en que se ha desarrollado la IA tienen en común que se piensa la ética como algo que regula, organiza, inhibe o refuerza un comportamiento que ya existe.
+        
+        <p class="doscuadros fragment fade-in-then-semi-out"> La creatura imaginada por Velleman cuenta con la capacidad para la reflexión ética en la medida en que tiene comportamientos resultado de la motivación que adicionalmente son revisados y orientados por la razón práctica.</p>
+        <p class="doscuadros fragment">De manera análoga podemos ver a los programas creados por ML como si les faltase incorporar justo un tipo de capacidad adicional en la forma de la reflexión ética: falta en la IA un proceso que regule los resultados que ya se tienen. </p>
+        
+        </section>
+    <section>Justo eso es lo que está mal.</section>
+    <section  data-background-color="white"><p style="text-align:left; background-color:white; color:#022461; ">    Quiero sugerir que el avance en ética de la IA está estancado en la medida en que se tiene un modelo como el de Velleman y se busca eliminar los sesgos por medio de un mecanismo adicional que regula el comportamiento ya bien definido del programa. Aquellas propuestas más revolucionarias, y que en mi opinión tienen mayor promesa, tienen en común una interpretación de las maneras de intentar resolver los problemas que implica una reformulación substancial del programa mismo de IA.
+</p> </section>
+    
+    
+    <section><h2>Concepción aditiva <br>vs<br> Concepción transformativa</h2> </section>
+    
+    <section>Para explicar el tipo de relación con la ética de este tipo de concepciones voy a tomar dos ejemplos: primero, voy a hablar de la concepción aristotélica de animal racional  y luego voy a hablar sobre colores. </section>
+    
+    
+    <section  data-background-image ="img/aristo-old.jpg" data-background-size = "contain" data-background-position="right">
+        <p class="doscuadros">Los humanos somos animales racionales y la forma particular en que somos racionales no sólo es algo que se adiciona a nuestra condición animal, sino que transforma la manera particular en que somos animales. </p>
+    </section>
+    
+    <section  data-background-image ="img/aristo-old.jpg" data-background-size = "contain" data-background-position="right">
+        <p class="doscuadros">    Si la racionalidad fuese una mera adición a nuestra animalidad, entonces nuestro carácter animal sería del mismo tipo que el de otros animales no-racionales: seríamos diferentes de los animales no-racionales en que tenemos algo más pero nuestra animalidad sería la misma.  En cambio, si la racionalidad se considera como una transformación de nuestra animalidad, nuestro carácter animal es de un tipo diferente de la animalidad de los no-racionales. 
+ </p>
+    </section>
+    <section>Por favor le pido al público aristotélico y anti-aristotélico: paciencia. </section>
+    
+        <section  data-background-image ="img/aristo-old.jpg" data-background-size = "contain" data-background-position="right">
+            <ol class="doscuadros">
+            <li>    Somos diferentes de los animales no-racionales en que tenemos algo más que la animalidad.
+</li>
+            <li>    Somos diferentes de los animales no-racionales en que nuestro carácter animal mismo es diferente, no sólo en que tenemos algo más que la animalidad.
+</li>
+            </ol>
+    </section>
+    
+<section>Ahora el mismo tipo de relación, pero con los colores.</section>
+    
+    <section  data-background-image ="img/redball.jpg" data-background-size = "contain" data-background-position="right">
+        <div class="highlightred">       
+            
+            <ol class="doscuadros highlightred">
+            <li class="" >    Una bola de color rojo tiene dos propiedades distintas: la de ser coloreada y la de ser roja.
+</li>
+            <li>  Ser rojo no es una propiedad independiente de ser colorada.  el ser rojo hace parte constitutiva de la manera determinada de ser coloreado
+</li>
+            </ol>
+</div>
+    </section>
+    
+    <section  data-background-image ="img/redball.jpg" data-background-size = "contain" data-background-position="right">
+        <div class="highlightred">        No es que esta bola tenga un color y adicionalmente tengan una propiedad en la que consiste su ser de color rojo. Más bien, decir que un objeto es rojo es decir que su manera de ser coloreado es, al menos parcialmente, roja: su ser rojo hace parte constitutiva de su manera determinada de ser coloreado. 
+</div>
+    </section>
+    
+    
+    <section>De acuerdo con una concepción aditiva de la x de Y, una competencia, propiedad o aspecto x de Y es tal que la naturaleza de Y es independiente de x y x agrega algo a Y. Sostener una concepción aditiva de la x de Y implica que es posible ofrecer una caracterización filosófica completa de Y sin apelar a su ser x –pues x es algo más.</section>
+    
+    <section>En cambio, de acuerdo con una concepción transformativa de la x de Y, una competencia, propiedad o aspecto x transforma Y tal que la naturaleza de Y no es independiente de su ser x.  Sostener una concepción transformativa de la x de Y implica defender que no es posible ofrecer una caracterización filosófica completa de Y sin apelar a su ser x –pues x constituye la menos parcialmente la naturaleza misma de Y. </section>
+    
+    
+    <section>Armados ahora con una descripción general de una concepción transformativa y una aditiva veamos cómo se formularía eso en el caso de la ética para la inteligencia artificial. </section>
+    
+    <section>Según lo dicho, una concepción aditiva de la ética para la inteligencia artificial afirma que es posible ofrecer una caracterización filosófica de la inteligencia artificial sin necesidad de incluir competencias éticas. <p class="fragment"> En términos de una tarea específica, la concepción aditiva de la ética consiste en sostener que la tarea se puede llevar a cabo en su totalidad y que las consideraciones éticas son adicionales a las consideraciones sobre la tarea específica. La competencia ética es una más que tiene el programa. </p></section>
+    
+    <section>Si tenemos un algoritmo de categorización de una cara humana para determinar si se trata de alguien con rasgos caucásicos, entonces, en una concepción aditiva, las consideraciones éticas no afectan para nada la naturaleza de la tarea y bien pueden hacerse independientemente de las consideraciones que sí tienen que ver con la tarea. </section>
+    
+    <section>Las consideraciones éticas vienen antes o después de la tarea, o incluso en paralelo, pero de manera en que no afecten para nada la naturaleza misma del proceso de categorización. En una concepción aditiva, la competencia ética regula el comportamiento, pero no lo constituye.</section>
+    
+    
+    
+    
 <section  data-background-color="white" data-background-image ="img/ggm.png" data-background-size = "contain" data-background-position="right">
 
 <div class="container">
