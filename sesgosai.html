@@ -68,7 +68,7 @@
 
 </section>
     
-<section>¿Cómo se soluciona el <span class="fragment highlight-red">problema de los sesgos algorítmicos</span>?  Para eliminar un sesgo hay que hacer una <span class="fragment highlight-red">transformación substancial</span> del programa. No hay una sola cosa qué extirpar, no hay una parte que cambiar, no hay un error qué borrar. No hay que cambiar un pedazo del programa. <span class="fragment highlight-red">Se necesita un cambio de raíz</span>.</section>    
+<section>¿Cómo se soluciona el <span class="fragment highlight-red">problema de los sesgos algorítmicos</span>?  Para eliminar un sesgo hay que hacer una <span class="fragment highlight-red">transformación substancial</span> de la IA. No hay una sola cosa qué extirpar; no hay una parte que cambiar. No hay un error qué borrarn; no hay que cambiar un pedazo. <span class="fragment highlight-red">Se necesita un cambio de raíz</span>.</section>    
     
     
 <section>
@@ -96,9 +96,172 @@
 </section>   
     
     
+    <section>
+    
+        
+    La tecnología evidencia los sesgos de sus creadores.     
+        
+    </section>
     
     
     
+    <section>
+        <div class="doscuadros">
+    Si quien diseña un edificio no tiene en mente a personas con diferentes capacidades puede terminar con un edificio difícil de ser usado por una persona en silla de ruedas o con que camina con bastón.
+        
+        <p class="fragment">Aquí hay un sesgo.</p></div>
+        
+    </section>
+    
+     <section>
+         
+        <div class="doscuadros">Si quien diseña una app no tiene en mente a personas con diferentes capacidades puede diseñar una app difícil de ser usada por una persona invidente.         
+        <p class="fragment">Aquí hay un sesgo.</p>
+        </div> 
+<div></div>
+    </section>
+    
+    
+<section>        <div class="doscuadros">
+
+   Tecnologías como un algoritmo generado por “machine learning”: un algoritmo con la función de “despixelar” imágenes de caras humanas, por ejemplo, puede ofrecer resultados con una constitución racial y de edad que "borra" los rasgos menos comunes en sus bases de entrenamiento y que el algoritmo de entrenamiento no seleccionó como relevantes. 
+    
+    <p class="fragment">Aquí hay un sesgo contra las personas con esos rasgos.</p>
+    </div>
+    
+    
+    </section>    
+    
+    
+<section>
+    
+     <em>Machine learning</em>: una forma particular de IA que agrupa una multiplicidad de métodos que en esencia dependen de un aprendizaje a partir de una base de datos.
+    </section>    
+    
+    
+    
+    
+    <section>
+    <div class="doscuadros">
+    En el caso del ML, el algoritmo no ha sido específicamente diseñado por humanos; ese comportamiento de eliminar rasgos es aprendido.
+        
+    <p class="fragment">Por eso es difícil encontrar el lugar en donde se incorpora el sesgo, ni asignar la responsabilidad y procurar una forma de eliminarlo. </p>    </div>    
+        
+    
+    </section>
+    
+    <section>"<em>Garbage in; garbage out</em>" suele ser la explicación dada por los ingenieros trabajando en un programa que toma decisiones sesgadas y la idea es que se puede mejorar los datos de entrenamiento y solucionar así el problema. </section>
+    
+    
+    <section>
+        Pero su funcionamiento es una caja negra de la cual sólo se tiene información limitada y no es fácil determinar dónde está el problema para solucionarlo. <span class="fragment">Entonces se hace lo que se puede </span><span class="fragment">antes</span><span class="fragment">, durante</span> <span class="fragment">y después del procesamiento </span><span class="fragment">y aún así, como veremos, hay problemas.</span>
+    
+    </section>
+    
+    
+<section>Entonces volvamos con un poco más detalle para ver cómo funciona el ML y dónde podríamos encontrar problemas.</section>    
+    <section><div class="doscuadros"> La idea general del ML es que a partir de una base de datos y un mecanismo de aprendizaje es posible generar un programa que realice a una tarea específica. Así, el tipo de aprendizaje que se utilice cambiará el resultado. Aquí una explicación rápida de la idea del aprendizaje en ML.</div> </section>
+    
+<section>
+    Si bien hay varios tipos de aprendizaje, voy a tomar el caso del aprendizaje supervisado como un caso donde podemos ver dónde puede haber claramente tanto sesgos humanos como sesgos que no vienen de lo que piensan los diseñadores del programa. <span class="fragment">En los casos de aprendizaje sin supervisión y el caso de aprendizaje por refuerzo puede que sea incluso más difícil determinar el tipo de sesgo y su origen;</span> <span class="fragment"> tanto peor para la posibilidad usual de seleccionar y reparar los sesgos. </span> <span class="fragment">Todo tipo de programa estará atado al menos a alguna de las maneras en que hay sesgos en el aprendizaje supervisado, entonces al estudiar este caso podemos ver los problemas generales.
+    </span>
+    </section>    
+    
+    <section>Así, empecemos con el caso del aprendizaje supervisado. Un programa se produce a partir de una base de datos que ha sido previamente categorizada gracias a la cual se aprende la relación entre los datos ofrecidos y esas categorías señaladas. </section>
+    
+    <section  data-background-image ="img/cats.jpg" data-background-size = "contain" >
+    
+    <p class="fragment highlightred">Podemos tener un programa para identificar gatos caseros que parte de una base de datos de imágenes de animales que han sido categorizadas entre gatos y no-gatos de manera que luego permite, para una imagen de una mascota que no estaba dentro de los datos de entrenamiento, determinar si se trata de un gato.</p>
+    </section>
+    
+        <section  data-background-image ="img/cats.jpg" data-background-size = "contain" > 
+            
+            <p class=" highlightred">La categorización puede ser tan fina como sea programada: se puede señalar que los gatos tienen también ojos grandes, tamaño y forma general y luego esta misma categorización será empelada para determinar en los casos por fuera de la base de datos de entrenamiento si se trata de un gato o no. <span class="fragment">(O, en el caso de modos de aprendizaje sin supervisión, será tan fina como sea realizada por el algoritmo mismo.)</span></p>
+    </section>
+    
+    <section>Es importante apreciar cómo la base de datos seleccionada puede sesgar al programa.</section>
+    
+        <section  data-background-image ="img/cateye.jpg" data-background-size = "contain" > 
+                     <p class=" highlightred doscuadros">
+                         Si la base de datos sólo incluía pájaros y gatos, la cantidad de no-gatos con cuatro patas sería radicalmente diferente de lo que esperaríamos de una base de datos de mascotas que sólo tiene gatos y perros. Entonces, la manera de seleccionar gatos tendrá un sesgo en favor de las características que distinguen gatos de pájaros y no necesariamente aquellas que son propiamente felinas. <br> <span class="fragment">Si la base de datos no es representativa de la población, tendremos problemas. </span></p> 
+    
+    </section>
+
+      <section  data-background-image ="img/cateye.jpg" data-background-size = "contain" > 
+                     <p class=" highlightred doscuadros">
+                         Si quien categoriza tiene su propio sesgo en favor de la selección de gatos, entonces podríamos esperar que los datos estuviesen sesgados en la medida en que cargan con los sesgos de quien ha realizado la categorización. Incluso si tenemos una base de datos representativa puede que haya un sesgo en la medida en que la manera en que ha sido categorizada dé prioridad a una forma específica de entender qué es un gato. <span class="fragment">Si la base de datos está categorizada de manera sesgadas, tendremos problemas. </span>            </p>
+    
+    </section>
+
+      <section  data-background-image ="img/cateye.jpg" data-background-size = "contain" > 
+          <div class="doscuadros">
+          <p class=" highlightred ">    Una forma adicional en que los datos pueden estar sesgados es que la base de datos refleja apropiadamente cómo es la realidad, pero resulta que la realidad misma está sesgada.</p>
+          </div>
+    </section>
+    
+    <section>
+          <h1 class="fragment ">¿?</h1>
+    <p class="fragment">¿Cómo así que la realidad está sesgada?</p>
+    </section>
+    
+    <section>Aquí nuestro ejemplo de los gatos deja de tener mucho sentido pues no parece haber razón para pensar en que hay un sesgo en contra o en favor de los gatos en la realidad. Pero justamente los programas en ML van más allá de estos casos de juguete y es ahí en donde se pueden ver los problemas más importantes. </section>
+    
+    
+    <section>La aplicación Face De-Pixelizer tiene como entrada una imagen de una persona en baja resolución y como salida una imagen de alta calidad. De acuerdo con la descripción inicial del proyecto, se trata de una red neuronal entrenada con una base de datos amplia de fotos de personas en la plataforma Flikr que toma imágenes pixeladas y las despixela. </section>
+    
+      <section  data-background-image ="img/pulse.png" data-background-size = "contain" > 
+</section>
+    <section>A pesar de su maravilloso desempeño en algunas áreas, Face De-Pixelizer también puede devolver una imagen en que un adulto promedio, razonablemente bien informado, claramente podría reconocer que no es una versión despixelada de la original. </section>
+    
+    
+    
+    
+          <section  data-background-image ="img/pulse2.png" data-background-size = "contain" > 
+    </section>
+    
+    <section>La imagen de entrada es de un hombre colombiano viejo y el resultado es un joven caucásico. </section>
+    
+          <section  data-background-image ="img/pulse2.png" data-background-size = "contain" > 
+<p class="highlightred fragment">
+            Una razón por la que podemos pensar que hay un sesgo aquí es que la interpretación de los rasgos característicos de una persona que ha ofrecido el algoritmo es que son errores de la imagen, tal y como la pixelación, y los eliminado. </p></section>
+
+    
+<section>
+    <p class="">    Esto bien puede ser por la manera particular en que se seleccionó la base de datos. 
+</p>
+    <p class="fragment">   Alternativamente, se podría decir que el problema está que en la categorización usada se adoptó por etiquetas que no dan la posibilidad de categorizar con base en la edad -borrando efectivamente las diferencias de edades y optando por una edad general de la base de datos. </p>
+    <p class="fragment">Por último, bien puede ser que en la sociedad de donde se toman los datos, los rasgos caucásicos son más prevalentes o importantes o más privilegiados en las representaciones pictóricas</p>
+    <p class="fragment">    Dada la multiplicidad de maneras en que se podría entender, ¿cómo entender el problema? No tenemos una respuesta clara todavía. Con este ejemplo podemos ver la variedad de posibles respuestas.
+</p>
+
+    
+    </section>    
+    
+        <section data-background-image ="img/librosvarios.png" data-background-size = "contain" data-background-position="right">
+            
+        <p class="fragment highlightred">Afortunadamente, la existencia de sesgos de este tipo no es información confidencial. Ya hay personas dentro de la comunidad en IA e incluso por fuera de ella ya son conscientes de las posibilidades de sesgos y están atentos a cómo solucionarlos. </p>    
+    </section>
+
+    
+        <section data-background-image ="img/librosvarios.png" data-background-size = "contain" data-background-position="right">
+            
+        <p class="fragment highlightred">Esto no se debe tomar a la ligera; es ya un mérito que se esté identificando el hecho de que hay un problema pues es fácil dejarse llevar por la “objetividad” de un algoritmo que opera a partir de bases de datos “neutralmente” obtenidas –un algoritmo que está bien en la medida en que logra reflejar una sociedad que está mal.</p>    
+    </section>
+    
+    
+    <section>Pero recibir atención y recibir solución son dos cosas diferentes. ¿Qué tipo de soluciones se han sugerido? </section>
+    
+    
+    <section data-background-image ="img/sol1.png" data-background-size = "contain" data-background-position="right">
+    <p class="trescuadros highlightred">Suresh y Guttag (2019) </p>
+    </section>
+    
+    <section data-background-image ="img/survey.png" data-background-size = "contain" data-background-position="right">
+    <div class="trescuadros highlightred">Mehrabi et al. (2019)<br>    concluyen que los métodos reseñados buscan, en la mejor de las condiciones, que haya una mismidad de trato para todos pero que eso no evita el tipo de sesgo que ya hemos señalado de acuerdo con el cual el programa está sesgado en la medida en que es un reflejo “bueno” de una sociedad injusta. 
+     </div>
+    </section>
+
+
     
     
     <section  data-background-color="white" data-background-image ="img/ggm.png" data-background-size = "contain" data-background-position="right">
